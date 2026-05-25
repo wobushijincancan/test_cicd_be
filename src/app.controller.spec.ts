@@ -15,8 +15,13 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('should return the expected response object', () => {
+      // 期望返回的是一个对象，包含 code, message 和 data
+      expect(appController.getHello()).toEqual({
+        code: 0,
+        message: 'success',
+        data: 'Hello World!',
+      });
     });
   });
 });
